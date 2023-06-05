@@ -1,0 +1,32 @@
+.task-manager {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .task-form {
+    margin-bottom: 20px;
+  }
+  
+  .task-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .task {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .task h3 {
+    margin: 0;
+  }
+  
+  .task p {
+    margin: 0;
+  }
+  
+  .task input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,4 @@
+<div class="task" appHighlight [ngClass]="{ 'done': isDone }">
+    <p>{{ task }}</p>
+    <button (click)="onDeleteTask()">Delete</button>
+</div>

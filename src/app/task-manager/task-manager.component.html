@@ -1,0 +1,28 @@
+<div class="task-manager">
+  <h1>Task Manager</h1>
+
+  <div class="task-form">
+    <form *ngIf="!isEditMode" (submit)="addTask()">
+      <input type="text" [(ngModel)]="taskName" placeholder="Task Name" name="name" required>
+      <input type="text" [(ngModel)]="taskDescription" placeholder="Task Description" name="description" required>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <form *ngIf="isEditMode" (submit)="updateTask()">
+      <input type="text" [(ngModel)]="taskName" placeholder="Task Name" name="editName" required>
+      <input type="text" [(ngModel)]="taskDescription" placeholder="Task Description" name="editDescription" required>
+      <button type="submit">Update Task</button>
+      <button type="button" (click)="clearForm()">Cancel</button>
+    </form>
+  </div>
+
+  <div class="task-list">
+    <div class="task" *ngFor="let task of tasks">
+      <h3>{{ task.name }}</h3>
+      <p>{{ task.description }}</p>
+      <input type="checkbox" name="checkbox" [(ngModel)]="task.completed" (change)="toggleTaskCompletion(task)">
+      <button (click)="editTask(task)">Edit</button>
+      <button (click)="deleteTask(task)">Delete</button>
+    </div>
+  </div>
+</div>
